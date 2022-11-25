@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Kitchen
 {
-    class Refrigerator : HomeAppliance
+    class Refrigerator : KitchenAppliance
     {
         public Refrigerator()
     }

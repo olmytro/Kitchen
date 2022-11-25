@@ -6,7 +6,7 @@ namespace Kitchen
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Refrigerator Atlant = new Refrigerator("Atlant", "BMN-5563", "5 kvt", 220, "electricyty");
         }
     }
 }

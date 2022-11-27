@@ -4,34 +4,27 @@ using System.Text;
 
 namespace Kitchen
 {
-    abstract class KitchenAppliance
+    abstract class KitchenAppliance 
     {
-        private string name;
-        private string model;
-        private bool working;
-        private int power;
-        private int tension;
-        private string raw;
+        public string name;
+        public string status = "not working";
+        public bool workingBool = false;
 
-        public KitchenAppliance(string name, string model, string power, int tension, string raw)
-        {
-            this.name = name;
-            this.model = model;
-            this.power = power;
-            this.tension = tension;
-            this.raw = raw;
-        }
+        //abstract PushButton() потому что не все устройства начинают работу при нажатии кнопки.
+        //для других устройств нужна будет проверка может ли устройства заработать.
+        public abstract string PushButton();
 
-        public void SwitchOn()
-        {
-            working = true;
-        }
+        //virtual потому что у разных устройств может добавляться какое-то поле.
+        public virtual void GiveInfo(){}
 
-        public void SwitchOff()
+        //нужен метод, который просто меняет true на false.
+        //Этот метод возвращает bool abstract class`a или в классе наследнике?
+        public bool Turn()
         {
-            working = false;
+            if (workingBool == false)
+                return workingBool = true;
+            else
+                return workingBool = false;
         }
-        public abstract void Working();
-        
     }
 }
